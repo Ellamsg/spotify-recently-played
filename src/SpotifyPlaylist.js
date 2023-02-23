@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 
 const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played?limit=1&after=1484811043508";
+const GET_PROFILE ="https://api.spotify.com/v1/me/top/artists?limit=2"
 export default function SpotifyPlayist(){
     const [token, setToken] = useState("");
   const [data, setData] = useState({});
+  const [artist, setArtist] = useState({});
 
   useEffect(() => {
     if (localStorage.getItem("accessToken")) {
@@ -13,20 +15,10 @@ export default function SpotifyPlayist(){
     }
   }, []);
 
-  const playTrack = async (uri) => {
-    try {
-      await axios.put('https://api.spotify.com/v1/me/player/play', { uris: [uri] }, {
-        headers: {
-          Authorization: "Bearer" + token
-        }
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+ 
 
   const handleGetPlaylists = () => {
-     axios.get(PLAYLISTS_ENDPOINT, {
+     axios.get(PLAYLISTS_ENDPOINT,  {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -38,22 +30,35 @@ export default function SpotifyPlayist(){
         console.log(error);
       });
   };
- 
-
+  
+const getArtist =() =>{
+  axios.get(GET_PROFILE,  {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  })
+  .then((response) => {
+    setArtist(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
   return (
     <>
-    {data?.items ? data.items.map((item) => 
+    {artist?.items ? artist.items.map((item) => 
       <div>
-         
-          <button onClick={() => playTrack(item.track.uri)}>Play</button>
+         <p>{item.name}</p>
+         <img src={item.images[0].url}/>
+          <button onClick={getArtist}>get artist vvv</button>
       </div>
     
       ) 
       
       : null}
      
-      <button onClick={handleGetPlaylists}>Get Playlists</button>
-     
+      <button onClick={handleGetPlaylists}>Get Playlist</button>
+      <button onClick={getArtist}>get artist vvv</button>
       {data?.items ? data.items.map((item) => 
       <div>
            <p>{item.track.name}</p>

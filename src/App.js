@@ -7,7 +7,7 @@ const CLIENT_ID = 'd678732486934e8685bc549c98783d78'
 const SPOTIFY_AUTHORIZE_ENDPOINT ='https://accounts.spotify.com/authorize';
 const REDIRECT_URL_AFTER_LOGIN = 'http://localhost:3000'
 const SPACE_DELIMITER = "%20";
-const SCOPES =["user-read-recently-played","user-read-currently-playing","user-read-playback-state", "user-read-private", "user-read-email" ]
+const SCOPES =["user-read-recently-played","user-top-read","user-read-currently-playing","user-read-playback-state", "user-read-private", "user-read-email" ]
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER)
 
 const getReturnedParamsFromSpotifyAuth = (hash) =>{
@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <h1>hi</h1>
+       <h1>hm</h1>
        <button onClick={handleLogin}>login to spotify</button>
       <SpotifyPlayist/>
       </header>
