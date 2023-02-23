@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import './App.css';
 import axios from "axios"
 
 const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played?limit=1&after=1484811043508";
@@ -45,7 +45,18 @@ const getArtist =() =>{
   });
 }
   return (
-    <>
+    <div className="">
+      <div className="flex flex-row bg-red justify-around p-6">
+        <div className=" bg-blue flex flex-row ">
+        <img className=" " src="image/squares.png"/>
+        <h1 className="p-6">wizzy</h1>
+        </div>
+       
+        <div>
+        <img src="image/squares.png"/>
+        </div>
+      </div>
+    
     {artist?.items ? artist.items.map((item) => 
       <div>
          <p>{item.name}</p>
@@ -60,7 +71,7 @@ const getArtist =() =>{
       <button onClick={handleGetPlaylists}>Get Playlist</button>
       <button onClick={getArtist}>get artist vvv</button>
       {data?.items ? data.items.map((item) => 
-      <div>
+      <div className="change">
            <p>{item.track.name}</p>
            <p>{item.track.artists[0].name}</p>
         <img src={item.track.album.images[0].url}/>
@@ -70,6 +81,6 @@ const getArtist =() =>{
       ) 
       
       : null}
-    </>
+    </div>
   );
 }

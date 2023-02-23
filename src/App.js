@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './Components/Nav';
 import SpotifyPlayist from './SpotifyPlaylist';
 import { useEffect } from 'react';
+
 
 const CLIENT_ID = 'd678732486934e8685bc549c98783d78'
 const SPOTIFY_AUTHORIZE_ENDPOINT ='https://accounts.spotify.com/authorize';
@@ -40,12 +42,12 @@ function App() {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
   };
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>hm</h1>
-       <button onClick={handleLogin}>login to spotify</button>
+    <div className="">
+      <Nav/>
+       
+       <button  onClick={handleLogin}>login to spotify</button>
       <SpotifyPlayist/>
-      </header>
+     
     </div>
   );
 }
