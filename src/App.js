@@ -43,9 +43,9 @@ function App() {
   };
   return (
     <div className="">
-      <Nav/>
+      <Nav handleLogin={handleLogin}/>
        
-       <button  onClick={handleLogin}>login to spotify</button>
+       {/*<button  onClick={handleLogin}>login to spotify</button>*/}
       <SpotifyPlayist/>
      
     </div>
