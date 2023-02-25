@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played?limit=1&after=148811043508";
+import SpotifyPlayer from 'react-spotify-web-playback';
+const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played?limit=4&after=148811043508";
 export default function LastPlayed(){
 
     const [token, setToken] = useState("");
@@ -27,44 +28,35 @@ export default function LastPlayed(){
            console.log(error);
          });
      };
+     handleGetPlaylists()
     return(
 
-        <div className="p-3">
+        <div className="p-3 ">
             <div className=" ">
                 <h1 className="text-black p-3 border-b-2 text-3xl border-gray-light">LAST PLAYED</h1>
             </div>
             <h1 className="p-3">song activity</h1>
-            <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 justify-items-center gap-3">
-        
-                <div className="relative bg-red">
-                <img className="mages"src="image/05.jpg"/>
-                <h1 className="absolute  top-0 text-red text-3xl">Burna boy</h1>
-                <h1 className=" played-text ">last last</h1>
-                </div>
-                <div>
-                <img className="mages"src="image/03.jpg"/>
-                </div>
-                <div>
-                <img className="mages"src="image/01.jpg"/>
-                </div>
-                <div>
-                <img className="mages"src="image/02.jpg"/>
-                </div>
-                 
-            </div>
-
-         {/* <button onClick={handleGetPlaylists} >get</button>*/}
+            {/*<button onClick={handleGetPlaylists} >get</button>*/}
+<div className="grid lg:grid-cols-4 px-3 md:grid-cols-2 justify-center grid-cols-1 justify-items-center gap-3">
+       
         {data?.items ? data.items.map((item) => 
-      <div className="change">
-           <p>{item.track.name}</p>
-           <p>{item.track.artists[0].name}</p>
-        <img src={item.track.album.images[0].url}/>
-      
-      </div>
-    
+        
+      <div className=" ">
+        
+        <div className="relative  bg-red">
+        <img className="mages grid "src={item.track.album.images[0].url}/>
+        <h1 className="absolute  top-0 text-red text-3xl">{item.track.artists[0].name}</h1>
+        <h1 className=" played-text ">{item.track.name}</h1>
+        </div>
+        
+         
+    </div>
+     
+     
       ) 
       
       : null}
+      </div>
         </div>
     )
 }

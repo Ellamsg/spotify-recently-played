@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 .mages{
-  @apply h-[350px] w-[400px];
+  @apply h-[350px] w-[400px] hover:w-[405px] hover:scale-105 hover:transition-all bg-contain object-cover;
 }
 .played-text{
  @apply absolute right-0 bottom-0 left-0 text-center text-white text-2xl;
+}
+.drop{
+  filter: drop-shadow(30px 10px 4px #4444dd);
+  mix-blend-mode: luminosity;
 }
 body {
   margin: 0;
