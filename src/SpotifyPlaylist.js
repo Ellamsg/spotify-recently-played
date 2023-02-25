@@ -36,17 +36,17 @@ function refreshPage() {
 }
   return (
     <div className="">
-    <div className="flex  flex-row gradient gap-9 justify-center ">
-       <div className="  py-6 flex flex-col md:flex-row md:gap-3 ">
+    <div className="flex p-3 lg:flex-row gradient gap-9 justify-center ">
+       <div className="  py-6 flex flex-col lg:flex-row md:gap-3 ">
        <img className=" h-[300px] w-[300px]" src="image/01.jpg"/>
-       <div className="md:py-6 md:text-left text-center ">
+       <div className="md:py-6 lg:text-left text-center ">
        <h1 className="text-3xl text-red">wiz</h1>
        <h1 className=" text-white">wizzy said he would take it </h1>
        </div>
        
        </div>
       
-       <div className="relative md:block hidden bg-green">
+       <div className="relative lg:block hidden bg-green">
        <img className="h-full w-[400px]"src="image/03.jpg"/>
        <p className="absolute right-0 bottom-4">hh</p>
        <p className="absolute right-0 bottom-4">hh</p>
