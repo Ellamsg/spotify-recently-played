@@ -9,8 +9,7 @@ export default function Nav(props){
             <h1 className=" text-white ">SUONO</h1>
             </div>
           <div className="bg-darkwind p-4 border-b-2 border-green">
-          <h1 className=" text-white">nav bar</h1>
-           <button  onClick={props.handleLogin}>login to spotify</button>
+           <button className=" text-white "  onClick={props.handleLogin}>LOGIN TO SPOTIFY</button>
           </div>
            
         </div>

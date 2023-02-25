@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './Components/Nav';
 import SpotifyPlayist from './SpotifyPlaylist';
 import { useEffect } from 'react';
+import LastPlayed from './Components/LastPlayed';
 
 
 const CLIENT_ID = 'd678732486934e8685bc549c98783d78'
@@ -47,7 +48,7 @@ function App() {
        
        {/*<button  onClick={handleLogin}>login to spotify</button>*/}
       <SpotifyPlayist/>
-     
+       <LastPlayed/>
     </div>
   );
 }
