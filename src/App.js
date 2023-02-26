@@ -4,7 +4,7 @@ import Nav from './Components/Nav';
 import SpotifyPlayist from './SpotifyPlaylist';
 import { useEffect } from 'react';
 import LastPlayed from './Components/LastPlayed';
-
+import TopTracks  from './Components/TopTracks';
 
 const CLIENT_ID = 'd678732486934e8685bc549c98783d78'
 const SPOTIFY_AUTHORIZE_ENDPOINT ='https://accounts.spotify.com/authorize';
@@ -49,7 +49,9 @@ function App() {
        
        
       <SpotifyPlayist />
+      <TopTracks/>
        <LastPlayed/>
+       
     </div>
   );
 }
