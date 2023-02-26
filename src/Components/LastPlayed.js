@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SpotifyPlayer from "react-spotify-web-playback";
-const PLAYLISTS_ENDPOINT =
-  "https://api.spotify.com/v1/me/player/recently-played?limit=4&after=148811043508";
+const PLAYLISTS_ENDPOINT ="https://api.spotify.com/v1/me/player/recently-played?limit=4&after=148811043508";
+
+
 export default function LastPlayed() {
   const [token, setToken] = useState("");
   const [data, setData] = useState({});
@@ -46,13 +47,13 @@ export default function LastPlayed() {
   })
   return (
     <div className="p-3 ">
+     
       <div className=" ">
-        <h1 className="text-black p-3 border-b-2 text-3xl border-gray-light">
-          LAST PLAYED
+        <h1 className="text-black p-3  border-b-2 text-3xl border-gray-light">
+          RECENTLY PLAYED
         </h1>
       </div>
-      <h1 className="p-3">song activity</h1>
-      {/*<button onClick={handleGetPlaylists} >get</button>*/}
+      <h1 className="p-3 text-red font-bold">Song Activity</h1>
       
       <div className="grid lg:grid-cols-4 px-3 md:grid-cols-2 justify-center grid-cols-1 justify-items-center gap-3">
         {data?.items

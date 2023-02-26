@@ -86,7 +86,7 @@ export default function SpotifyPlayist() {
           ))
         : null}
 
-      {/*<button onClick={getArtist}>artist</button>*/}
+     
     </div>
   );
 }

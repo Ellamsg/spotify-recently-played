@@ -43,7 +43,8 @@ function App() {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
   };
   return (
-    <div className="">
+    <div className="relative">
+       <p className="absolute text-center font-bold -z-10 md:text-2xl  text-1xl top-[350px] bottom-0 left-0 right-0 ">LOGIN & TAP TO GET SPOTIFY ACTIVITY</p>
       <Nav handleLogin={handleLogin}/>
        
        
