@@ -80,7 +80,7 @@ export default function SpotifyPlayist() {
                   src={item.images[0].url}
                 />
               </div>
-    
+           
             </div>
             
           ))

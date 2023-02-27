@@ -62,12 +62,13 @@ export default function LastPlayed() {
                   <h1 className="absolute  top-0 text-red text-3xl">
                     {item.track.artists[0].name}
                   </h1>
-                  <h1 className=" played-text ">{item.track.name}</h1>
-                  <AudioPlayer
+                  <h1 className=" text-red played-text absolute top-[220px] ">{item.track.name}</h1>
+                
+                <AudioPlayer
                   className="audio absolute z-10 bottom-0 bg-transparent text-center
-                    text-transparent font-bold"
+                  text-transparent font-bold"
                    
-                    src={item.preview_url}
+                    src={item.track.preview_url}
                     onPlay={(e) => console.log("onPlay")}
                     customAdditionalControls ={[]}
                     showJumpControls={false}
