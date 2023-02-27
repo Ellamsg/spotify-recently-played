@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ReactAudioPlayer from "react-audio-player";
 import AudioPlayer from "react-h5-audio-player";
 
 const TRACK_PLAY = "https://api.spotify.com/v1/me/top/tracks?limit=8";
@@ -47,7 +46,7 @@ export default function TopTracks() {
   return (
     <div className="p-3 ">
       <div className=" ">
-        <h1 className="text-black p-3  border-b-2 text-3xl border-gray-light">
+        <h1 className="text-white  p-3  border-b-2 text-3xl border-green">
           TOP TRACKS
         </h1>
       </div>

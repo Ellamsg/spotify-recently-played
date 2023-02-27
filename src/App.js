@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import Nav from './Components/Nav';
 import SpotifyPlayist from './SpotifyPlaylist';
 import { useEffect } from 'react';
@@ -27,6 +28,11 @@ const getReturnedParamsFromSpotifyAuth = (hash) =>{
 }
 
 function App() {
+
+  
+
+
+
   useEffect( () =>{
     if(window.location.hash){
       const { access_token, expires_in, token_type } =
@@ -43,9 +49,9 @@ function App() {
     window.location = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`;
   };
   return (
-    <div className="relative">
+    <div  className="relative ">
        <p className="absolute text-center font-bold -z-10 md:text-2xl 
-        text-1xl top-[400px] md:top-[350px] bottom-0 left-0 right-0 ">LOGIN & TAP TO GET SPOTIFY ACTIVITY</p>
+        text-1xl top-[440px] text-black md:top-[440px] text-white bottom-0 left-0 right-0 ">LOGIN & TAP TO GET SPOTIFY ACTIVITY</p>
       <Nav handleLogin={handleLogin}/>
        
        

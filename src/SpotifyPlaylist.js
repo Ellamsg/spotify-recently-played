@@ -39,7 +39,7 @@ export default function SpotifyPlayist() {
   React.useEffect (() =>{
     const data = localStorage.getItem("artists");
     if(data){
-      setArtist(JSON.parse(data))
+      setArtist(JSON.parse(data)) 
     }
   },[])
 
@@ -59,14 +59,14 @@ export default function SpotifyPlayist() {
 
       {artist?.items
         ? artist.items.map((item) => (
-            <div className="flex p-3 lg:flex-row gradient gap-9 justify-center ">
-              <div className="  py-6 flex flex-col lg:flex-row md:gap-3 ">
+            <div className="flex  p-3 lg:flex-row gradient gap-9 justify-center ">
+              <div className=" py-6 lg:h-[300px]  flex flex-col lg:flex-row md:gap-3 card-color ">
                 <img
                   className=" h-[300px] w-[300px]"
                   src={item.images[2].url}
                 />
                 <div className="md:py-6 lg:text-left text-center ">
-                  <h1 className="text-3xl text-red underline uppercase">
+                  <h1 className="text-3xl text-red  uppercase">
                     Your Top Artist
                   </h1>
                   <h1 className="text-3xl text-white">{item.name}</h1>

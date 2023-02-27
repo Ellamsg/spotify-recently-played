@@ -4,7 +4,7 @@ import React from "react";
 export default function Nav(props) {
  
   return (
-    <div className=" bg-wind flex flex-row justify-between ">
+    <div className="  bg-wind flex flex-row justify-between ">
     
       <div className="p-4">
         <h1 className=" text-white ">LAMS</h1>

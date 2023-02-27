@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-color: black;
+}
 .mages{
   @apply    md:hover:w-[310px] hover:scale-105 hover:transition-all bg-contain object-cover;
 }
@@ -9,12 +12,18 @@
  @apply absolute right-0 bottom-0 left-0 text-center text-white text-2xl;
 }
 .drop{
-  filter: drop-shadow(30px 10px 4px #4444dd);
-  mix-blend-mode: luminosity;
+  
+  mix-blend-mode:multiply;
 }
+
 .audio svg{
-  color:green;
+  color:rgb(57, 153, 57);
   font-size: 60px;
+  filter: drop-shadow(3px 9px 16px rgba(63, 53, 53, 0.74))
+
+}
+.audio svg:hover{
+ color: red;
 }
 body {
   margin: 0;
