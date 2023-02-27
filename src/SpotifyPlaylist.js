@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import SpotifyPlayer from "react-spotify-web-playback";
+
 
 const GET_PROFILE = "https://api.spotify.com/v1/me/top/artists?limit=1";
 

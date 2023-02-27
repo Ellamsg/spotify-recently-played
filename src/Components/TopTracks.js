@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactAudioPlayer from "react-audio-player";
-const TRACK_PLAY = "https://api.spotify.com/v1/me/top/tracks?limit=4";
+import AudioPlayer from "react-h5-audio-player";
+
+const TRACK_PLAY = "https://api.spotify.com/v1/me/top/tracks?limit=8";
 
 export default function TopTracks() {
   const [token, setToken] = useState("");
@@ -50,7 +52,7 @@ export default function TopTracks() {
         </h1>
       </div>
       <h1 className="p-3 text-red font-bold">Song Activity</h1>
-
+      
       <div className="grid lg:grid-cols-4 px-3 md:grid-cols-2 justify-center grid-cols-1 justify-items-center gap-3">
         {track?.items
           ? track.items.map((item) => (
@@ -60,19 +62,32 @@ export default function TopTracks() {
                   <h1 className="absolute  top-0 text-red text-3xl">
                     {item.artists[0].name}
                   </h1>
+
                   <h1 className="text-red played-text absolute top-[220px]">
                     {item.name}
                   </h1>
-                  <ReactAudioPlayer
-                    className="bg-transparent w-full border-green border-2"
+                  <AudioPlayer
+                  className="audio absolute z-10 bottom-0 bg-transparent text-center
+                    text-transparent font-bold"
+                   
                     src={item.preview_url}
-                    controls
+                    onPlay={(e) => console.log("onPlay")}
+                    customAdditionalControls ={[]}
+                    showJumpControls={false}
+                    customVolumeControls={[]}
+                    defaultDuration={[]}
+                    
+                    // other props here
                   />
                 </div>
-              </div>
+                
+              
+                  </div>
+                 
             ))
           : null}
       </div>
+      
     </div>
   );
 }

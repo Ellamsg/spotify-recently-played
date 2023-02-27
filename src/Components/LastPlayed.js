@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ReactAudioPlayer from "react-audio-player";
+import AudioPlayer from "react-h5-audio-player";
 const PLAYLISTS_ENDPOINT =
   "https://api.spotify.com/v1/me/player/recently-played?limit=4&after=148811043508";
 
@@ -42,6 +42,7 @@ export default function LastPlayed() {
   });
   window.addEventListener("click", function () {
     handleGetPlaylists();
+   
   });
   return (
     <div className="p-3 ">
@@ -62,16 +63,26 @@ export default function LastPlayed() {
                     {item.track.artists[0].name}
                   </h1>
                   <h1 className=" played-text ">{item.track.name}</h1>
+                  <AudioPlayer
+                  className="audio absolute z-10 bottom-0 bg-transparent text-center
+                    text-transparent font-bold"
+                   
+                    src={item.preview_url}
+                    onPlay={(e) => console.log("onPlay")}
+                    customAdditionalControls ={[]}
+                    showJumpControls={false}
+                    customVolumeControls={[]}
+                    defaultDuration={[]}
+                    
+                    // other props here
+                  />
                 </div>
-                <ReactAudioPlayer
-                  className="bg-transparent w-full border-green border-2"
-                  src={item.track.preview_url}
-                  controls
-                />
+                
               </div>
             ))
           : null}
       </div>
+     
     </div>
   );
 }
