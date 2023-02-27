@@ -9,7 +9,7 @@ import TopTracks  from './Components/TopTracks';
 
 const CLIENT_ID = 'd678732486934e8685bc549c98783d78'
 const SPOTIFY_AUTHORIZE_ENDPOINT ='https://accounts.spotify.com/authorize';
-const REDIRECT_URL_AFTER_LOGIN = 'http://localhost:3000'
+const REDIRECT_URL_AFTER_LOGIN = "https://ellams-now-playing.netlify.app"
 const SPACE_DELIMITER = "%20";
 const SCOPES =["user-read-recently-played","streaming","user-top-read","user-read-currently-playing","user-read-playback-state", "user-read-private", "user-read-email" ]
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER)

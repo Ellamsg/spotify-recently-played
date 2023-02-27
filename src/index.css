@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  background-color: black;
+  background-image: linear-gradient(to bottom, #040303, #060404, #070506, #080609, #08070b, #08070b, #07060a, #07060a, #060407, #050304, #030102, #000000);
 }
 .mages{
   @apply    md:hover:w-[310px] hover:scale-105 hover:transition-all bg-contain object-cover;
