@@ -45,7 +45,6 @@ export default function SpotifyPlayist() {
      localStorage.setItem("artists",JSON.stringify(artist))
   })
 
-
   window.addEventListener ('click',function(){
     getArtist()
   })

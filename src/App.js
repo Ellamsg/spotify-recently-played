@@ -47,6 +47,7 @@ function App() {
   };
   return (
     <div  className="relative ">
+      
        <p className="absolute text-center font-bold -z-10 md:text-2xl 
         text-1xl top-[440px]  md:top-[440px] text-white bottom-0 left-0 right-0 ">LOGIN & TAP TO GET SPOTIFY ACTIVITY</p>
       <Nav handleLogin={handleLogin}/>
