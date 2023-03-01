@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
-
 const GET_PROFILE = "https://api.spotify.com/v1/me/top/artists?limit=1";
-
 
 export default function SpotifyPlayist() {
   const [token, setToken] = useState("");
@@ -46,8 +44,6 @@ export default function SpotifyPlayist() {
   React.useEffect (() =>{
      localStorage.setItem("artists",JSON.stringify(artist))
   })
-
-
 
 
   window.addEventListener ('click',function(){
